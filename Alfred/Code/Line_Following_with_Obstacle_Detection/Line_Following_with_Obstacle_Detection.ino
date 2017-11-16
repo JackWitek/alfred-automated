@@ -9,9 +9,9 @@
  *
  */
 
-#include "sensorsDRV.h"
+#include "sensorsDRV.h" // These files include the mappings
 #include <avr/wdt.h>
-#include "TBMotor.h"
+#include "TBMotor.h" // These files include the mappings
 #include <Servo.h>
 
 OseppTBMotor Motor1(12, 11);
@@ -80,13 +80,13 @@ void loop()
   //delay(25);
 }
 
+// This sets a maximum speed for the motor 
 void SetMotor()
 {
-  if (leftSpeed > 255)leftSpeed = 255; else if (leftSpeed < -255)leftSpeed = -255;
-  if (rightSpeed > 255)rightSpeed = 255; else if (rightSpeed < -255)rightSpeed = -255;
-  //Depending on your connection,
-  //if the direction of the motor rotation is not the direction you want,
-  //you can change it by changing the Positive/negative sign of the speed
+  if (leftSpeed > 255)leftSpeed = 150; else if (leftSpeed < -255)leftSpeed = -150;
+  if (rightSpeed > 255)rightSpeed = 150; else if (rightSpeed < -255)rightSpeed = -150;
+
+  //To switch motor directions (if wired backwards)
   leftMotor.SetSpeed(leftSpeed);
   rightMotor.SetSpeed(rightSpeed);
 }
