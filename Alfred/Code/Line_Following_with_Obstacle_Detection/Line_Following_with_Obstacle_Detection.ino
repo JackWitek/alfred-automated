@@ -41,6 +41,9 @@ void setup()
   sv.attach(servoPin);
   sv.write(servoBais);
 
+
+Serial.begin(9600); 
+
   //Setup a watchdog
   //When the battery voltage is insufficient / program unexpected
   //Watchdog reset chip
@@ -54,6 +57,8 @@ bool lineTracker[5];
 void loop()
 {
   const float threshold = 150;
+
+
 
   //If in 4 seconds,The program is not coming back here.
   //Chip will reset
@@ -103,7 +108,16 @@ void SetMotor()
 //for outputing code
 void test()
 {
-Serial.print(78);
+    Serial.print("LeftSpeed: " + leftSpeed");   
+        Serial.print(" RightSpeed: " + rightSpeed");   
+
+Serial.print("lineTracker[0] + lineTracker[1]+ lineTracker[2]+lineTracker[3]+lineTracker[4]+")
+
+  Serial.print("\n");              
+
+
+    delay(500);            // delay 100 milliseconds
+
 }
 
 
