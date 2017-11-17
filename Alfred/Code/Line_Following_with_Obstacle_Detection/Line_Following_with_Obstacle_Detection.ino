@@ -83,7 +83,9 @@ void loop()
     leftSpeed = rightSpeed = 255;
   }
   SetMotor();
-  //delay(25);
+test();
+
+  
 }
 
 
@@ -98,7 +100,11 @@ void SetMotor()
   rightMotor.SetSpeed(rightSpeed);
 }
 
-
+//for outputing code
+void test()
+{
+Serial.print(78);
+}
 
 
 

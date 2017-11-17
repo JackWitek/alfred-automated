@@ -17,7 +17,7 @@ float Ultrasonic::Detect()
   digitalWrite(_Trig_Pin, HIGH);
   delayMicroseconds(10);
   digitalWrite(_Trig_Pin, LOW);   
-  Distance = pulseIn(_Echo_Pin, HIGH, 3000)
+  Distance = pulseIn(_Echo_Pin, HIGH, 3000);
   if (Distance == 0)Distance = 5000;
   return Distance;
 }
