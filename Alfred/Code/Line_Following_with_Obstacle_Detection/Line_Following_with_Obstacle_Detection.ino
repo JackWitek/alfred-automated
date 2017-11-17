@@ -27,7 +27,7 @@ Ultrasonic ults(2, 4);
 
 // Set servo location on arduino and initialize position
 const int servoPin = 9;
-const int servoBais = 110;
+const int servoBais = 180;
 Servo sv;
 
 // Set initial motor speed
@@ -78,17 +78,17 @@ void loop()
   int right = -lineTracker[0] * 3 - lineTracker[1] * 2 + lineTracker[2]  + lineTracker[3] * 2 + lineTracker[4] * 3;
   if (left > right)
   {
-    leftSpeed = 255;
-    rightSpeed = -255;
+    leftSpeed = 150;
+    rightSpeed = -150;
   } else if (left < right)
   {
-    leftSpeed = -255;
-    rightSpeed = 255;
+    leftSpeed = -150;
+    rightSpeed = 150;
   } else {
-    leftSpeed = rightSpeed = 255;
+    leftSpeed = rightSpeed = 150;
   }
   SetMotor();
-test();
+
 
   
 }
@@ -97,8 +97,8 @@ test();
 // This sets a maximum speed for the motor 
 void SetMotor()
 {
-  if (leftSpeed > 255)leftSpeed = 150; else if (leftSpeed < -255)leftSpeed = -150;
-  if (rightSpeed > 255)rightSpeed = 150; else if (rightSpeed < -255)rightSpeed = -150;
+  if (leftSpeed > 150)leftSpeed = 150; else if (leftSpeed < -150)leftSpeed = -150;
+  if (rightSpeed > 150)rightSpeed = 150; else if (rightSpeed < -150)rightSpeed = -150;
 
   //To switch motor directions (if wired backwards)
   leftMotor.SetSpeed(leftSpeed);
@@ -108,14 +108,58 @@ void SetMotor()
 //for outputing code
 void test()
 {
-    Serial.print("LeftSpeed: " + leftSpeed);   
-        Serial.print(" RightSpeed: " + rightSpeed);   
+    Serial.print("Linetracker 0 status: ");    
+Serial.print(lineTracker[0] );
 
-Serial.print(lineTracker[0] + lineTracker[1]+ lineTracker[2]+lineTracker[3]+lineTracker[4]);
+   Serial.print(" - Linetrack pin read:  ");    
+Serial.print(analogRead(A0));
 
-  Serial.print("\n");              
+    Serial.print(" - Ultrasonic Detect: ");    
+Serial.print(ults.Detect());
 
-    delay(500);            // delay 100 milliseconds
+
+
+//    Serial.print(" - Pin 0  ");    
+//Serial.print(analogRead(0));
+//
+//    Serial.print(" - Pin 1  ");    
+//Serial.print(analogRead(1));
+//
+//    Serial.print(" - Pin 2  ");    
+//Serial.print(analogRead(2));
+//
+//    Serial.print(" - Pin 3  ");    
+//Serial.print(analogRead(3));
+//
+//
+//    Serial.print(" - Pin 4  ");    
+//Serial.print(analogRead(4));
+//
+//    Serial.print(" - Pin 5  ");    
+//Serial.print(analogRead(5));
+//
+//    Serial.print(" - Pin 6  ");    
+//Serial.print(analogRead(6));
+//
+//
+//
+//    Serial.print(" - Pin 7  ");    
+//Serial.print(analogRead(7));
+//
+//
+//    Serial.print(" - Pin 8  ");    
+//Serial.print(analogRead(8));
+//
+//
+//    Serial.print(" - Pin 9  ");    
+//Serial.print(analogRead(9));
+//
+//
+//    Serial.print(" - Pin 10  ");    
+//Serial.print(analogRead(10));
+//
+
+
 
 }
 
