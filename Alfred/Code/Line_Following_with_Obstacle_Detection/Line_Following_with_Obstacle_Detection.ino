@@ -108,13 +108,12 @@ void SetMotor()
 //for outputing code
 void test()
 {
-    Serial.print("LeftSpeed: " + leftSpeed");   
-        Serial.print(" RightSpeed: " + rightSpeed");   
+    Serial.print("LeftSpeed: " + leftSpeed);   
+        Serial.print(" RightSpeed: " + rightSpeed);   
 
-Serial.print("lineTracker[0] + lineTracker[1]+ lineTracker[2]+lineTracker[3]+lineTracker[4]+")
+Serial.print(lineTracker[0] + lineTracker[1]+ lineTracker[2]+lineTracker[3]+lineTracker[4]);
 
   Serial.print("\n");              
-
 
     delay(500);            // delay 100 milliseconds
 
