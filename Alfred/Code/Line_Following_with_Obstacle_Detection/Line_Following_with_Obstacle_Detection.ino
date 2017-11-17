@@ -14,22 +14,27 @@
 #include "TBMotor.h" // These files include the mappings
 #include <Servo.h>
 
+// Set the motor location on arduino
 OseppTBMotor Motor1(12, 11);
 OseppTBMotor Motor2(8, 3);
 
-
+// Variables for the motors
 #define leftMotor Motor1
 #define rightMotor Motor2
 
+// Set ultrsonic sensor location on arduino
 Ultrasonic ults(2, 4);
 
+// Set servo location on arduino and initialize position
 const int servoPin = 9;
 const int servoBais = 110;
 Servo sv;
 
+// Set initial motor speed
 int leftSpeed = 0;
 int rightSpeed = 0;
 
+// Running some setup stuff
 void setup()
 {
   for (int i = A0; i < A5; i++)pinMode(i, INPUT_PULLUP);
@@ -43,6 +48,7 @@ void setup()
 
 }
 
+// Array for lineTracker status
 bool lineTracker[5];
 
 void loop()
@@ -79,6 +85,7 @@ void loop()
   SetMotor();
   //delay(25);
 }
+
 
 // This sets a maximum speed for the motor 
 void SetMotor()
