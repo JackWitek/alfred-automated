@@ -10,6 +10,7 @@ class Ultrasonic
     Ultrasonic(uint8_t Trig_Pin, uint8_t Echo_Pin);
     float Detect();
     float Distance;
+        float Time;
   private:
     uint8_t _Trig_Pin, _Echo_Pin;
 };
