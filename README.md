@@ -1,10 +1,11 @@
 # Alfred Automated
  
- Capstone drink delivery project with fully responsive website front end (Bootstrap) 
+ Capstone drink delivery project with fully responsive website front end
 
  Uses an Arduino based robot, and Java based communication utility
 
 
+Available here is:
 
 **BaseFind:** Arduino c++ code to control robot motors and read sensors
 
